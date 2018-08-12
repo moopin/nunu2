@@ -1,14 +1,15 @@
 # -*- coding: utf-8 -*- 
-import LINEPY
-from LINEPY import *
+from linepy import *
 from akad.ttypes import *
 from multiprocessing import Pool, Process
-from time import sleep
-import pytz, datetime, pafy, time, timeit, random, sys, ast, re, os, json, subprocess, threading, string, codecs, requests, tweepy, ctypes, urllib, wikipedia
-from datetime import timedelta, date
+from akad.ttypes import ContentType as Type
 from datetime import datetime
+import time,random,sys,json,codecs,threading,glob,re,os,subprocess
 from bs4 import BeautifulSoup
-import youtube_dl
+from humanfriendly import format_timespan, format_size, format_number, format_length
+import time, random, sys, json, codecs, threading, glob, re, string, os, requests, subprocess, six, ast, pytz, urllib, urllib.parse,youtube_dl,pafy,timeit,atexit,traceback
+from gtts import gTTS
+from googletrans import Translator
 
 cl = LineClient(authToken='Evj3hTMjFWiUIrrY9VY5.4DANLenrmne5/CxD4zQP5q.Rff91BIOb2Avk9v7GfzAcybVeUFnvNDxd2mJXdRFMg0=')
 cl.log("Auth Token : " + str(cl.authToken))
