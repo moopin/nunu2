@@ -138,8 +138,8 @@ def sendMessageWithMention(to, mid):
         logError(error)
         
 def helpmessage():
-    helpMessage = "╭───────────────────" + "\n" + \
-                  "│✒♠✳▪ ARIF_MH▪✳♠" + "\n" + \
+    helpMessage = "╭──────────────" + "\n" + \
+                  "│✒【さัএπัஞ✵ບิथℓℓҨतΩ】" + "\n" + \
                   "│" + "\n" + \
                   "│✒──✪〔 Help Message 〕✪──" + "\n" + \
                   "│" + "\n" + \
@@ -148,21 +148,21 @@ def helpmessage():
                   "│▪➤Translate" + "\n" + \
                   "│▪➤Texttospeech" + "\n" + \
                   "│" + "\n" + \
-                  "│✒✪〔 Protect 〕✪───────" + "\n" + \
+                  "│✒✪〔 Protect 〕✪────" + "\n" + \
                   "│▪➤Protect 「On/Off」" + "\n" + \
                   "│▪➤QrProtect 「On/Off」" + "\n" + \
                   "│▪➤InviteProtect 「On/Off」" + "\n" + \
                   "│▪➤CancelProtect 「On/Off」" + "\n" + \
                   "│▪➤SetPro 「On/Off」" + "\n" + \
                   "│" + "\n" + \
-                  "│✒✪〔 Status 〕✪────────" + "\n" + \
+                  "│✒✪〔 Status 〕✪─────" + "\n" + \
                   "│▪➤Restart" + "\n" + \
                   "│▪➤Runtime" + "\n" + \
                   "│▪➤Speed" + "\n" + \
                   "│▪➤Status" + "\n" + \
                   "│▪➤About" + "\n" + \
                   "│" + "\n" + \
-                  "│✒✪〔 Settings 〕✪───────" + "\n" + \
+                  "│✒✪〔 Settings 〕✪────" + "\n" + \
                   "│▪➤AutoAdd「On/Off」" + "\n" + \
                   "│▪➤AutoJoin「On/Off」" + "\n" + \
                   "│▪➤AutoLeave「On/Off」" + "\n" + \
@@ -170,7 +170,7 @@ def helpmessage():
                   "│▪➤CheckSticker「On/Off」" + "\n" + \
                   "│▪➤DetectMention「On/Off」" + "\n" + \
                   "│" + "\n" + \
-                  "│✒✪〔 Self 〕✪─────────" + "\n" + \
+                  "│✒✪〔 Self 〕✪──────" + "\n" + \
                   "│▪➤Me" + "\n" + \
                   "│▪➤MyMid" + "\n" + \
                   "│▪➤MyName" + "\n" + \
@@ -188,7 +188,7 @@ def helpmessage():
                   "│▪➤CloneProfile「Mention」" + "\n" + \
                   "│▪➤RestoreProfile" + "\n" + \
                   "│" + "\n" + \
-                  "│✒✪〔 Group 〕✪────────" + "\n" + \
+                  "│✒✪〔 Group 〕✪─────" + "\n" + \
                   "│▪➤GroupCreator" + "\n" + \
                   "│▪➤GroupId" + "\n" + \
                   "│▪➤GroupName" + "\n" + \
@@ -201,7 +201,7 @@ def helpmessage():
                   "│▪➤Kill「Mention」" + "\n" + \
                   "│▪➤KickAllMember"+ "\n" + \
                   "│" + "\n" + \
-                  "│✒✪〔 Special 〕✪───────" + "\n" + \
+                  "│✒✪〔 Special 〕✪────" + "\n" + \
                   "│▪➤Mimic「On/Off」" + "\n" + \
                   "│▪➤MimicList" + "\n" + \
                   "│▪➤MimicAdd「Mention」" + "\n" + \
@@ -210,7 +210,7 @@ def helpmessage():
                   "│▪➤Lurking「Oɴ/Off/Reset」" + "\n" + \
                   "│▪➤Lurking" + "\n" + \
                   "│" + "\n" + \
-                  "│✒✪〔 Media 〕✪────────" + "\n" + \
+                  "│✒✪〔 Media 〕✪─────" + "\n" + \
                   "│▪➤Kalender" + "\n" + \
                   "│▪➤CheckDate「Date」" + "\n" + \
                   "│▪➤InstagramInfo「UserName」" + "\n" + \
@@ -221,7 +221,7 @@ def helpmessage():
                   "│▪➤SearchImage「Search」" + "\n" + \
                   "│▪➤ScreenshootWebsite「LinkUrl」" + "\n" + \
                   "│" + "\n" + \
-                  "│✒✪〔 Bot 〕✪─────────" + "\n" + \
+                  "│✒✪〔 Bot 〕✪──────" + "\n" + \
                   "│▪➤AdminAdd" + "\n" + \
                   "│▪➤AdminDel" + "\n" + \
                   "│▪➤AdminList" + "\n" + \
@@ -237,7 +237,7 @@ def helpmessage():
                   "│▪➤JoinAll" + "\n" + \
                   "│▪➤ByeAll" + "\n" + \
                   "│" + "\n" + \
-                  "╰─〔 Credits By: ©arifistifik™  〕"
+                  "╰─〔 Credits By:【さัএπัஞ✵ບิथℓℓҨतΩ】〕"
     return helpMessage
     
 def helptexttospeech():
@@ -622,7 +622,7 @@ def lineBot(op):
 #==============================================================================#
                 elif text.lower() == 'status':
                     try:
-                        ret_ = "╭──[ Status ]"
+                        ret_ = "╭─[【さัএπัஞ✵ບิथℓℓҨतΩ】]"
                         if settings["protect"] == True: ret_ += "\n│✒ Protect ✔"
                         else: ret_ += "\n│✒ Protect ✖"
                         if settings["qrprotect"] == True: ret_ += "\n│✒ Qr Protect ✔"
@@ -643,7 +643,7 @@ def lineBot(op):
                         else: ret_ += "\n│✒ Check Sticker ✖"
                         if settings["detectMention"] == True: ret_ += "\n│✒ Detect Mention ✔"
                         else: ret_ += "\n│✒ Detect Mention ✖"
-                        ret_ += "\n╰──[ Status ]"
+                        ret_ += "\n╰─[【さัএπัஞ✵ບิथℓℓҨतΩ】]"
                         arif.sendMessage(to, str(ret_))
                     except Exception as e:
                         arif.sendMessage(msg.to, str(e))
@@ -932,7 +932,7 @@ def lineBot(op):
                     ki3.sendMessage(msg.to,responsename4)
                     ki4.sendMessage(msg.to,responsename5)
                     
-                elif msg.text.lower() == 'absen':
+                elif msg.text.lower() == 'bots':
                     if msg._from in Owner:
                         arif.sendContact(to, arifMID)
                         ki.sendContact(to, kiMID)
@@ -940,14 +940,14 @@ def lineBot(op):
                         ki3.sendContact(to, ki3MID)
                         ki4.sendContact(to, ki4MID)
                         
-                elif text.lower() in ["byeall"]:
+                elif text.lower() in ["bye"]:
                   if msg._from in Owner:    
                     ki.leaveGroup(msg.to)
                     ki2.leaveGroup(msg.to)
                     ki3.leaveGroup(msg.to)
                     ki4.leaveGroup(msg.to)
                
-                elif text.lower() in ["joinall"]:
+                elif text.lower() in ["join"]:
                   if msg._from in Owner:    
                     G = arif.getGroup(msg.to)
                     ginfo = arif.getGroup(msg.to)
@@ -969,7 +969,7 @@ def lineBot(op):
                     sendMessageWithMention(to, arifMID)
                     arif.sendContact(to, arifMID)
                 elif text.lower() == 'mymid':
-                    arif.sendMessage(msg.to,"[MID]\n" +  arifMID)
+                    arif.sendMessage(msg.to,"【さัএπัஞ✵ບิथℓℓҨतΩ】\n" +  arifMID)
                 elif text.lower() == 'myname':
                     me = arif.getContact(arifMID)
                     arif.sendMessage(msg.to,"[DisplayName]\n" + me.displayName)
@@ -1279,18 +1279,18 @@ def lineBot(op):
                            except:
                                random.choice(KAC).sendText(msg.to,"Error")
 #-------------------------------------------------------------------------------
-                elif text.lower() == 'kickallmember':
+                elif text.lower() == 'เอาดิ':
                     if msg._from in Owner:
                         if msg.toType == 2:
                             print ("[ 19 ] KICK ALL MEMBER")
-                            _name = msg.text.replace("kickallmember","")
-                            gs = arif.getGroup(msg.to)
+                            _name = msg.text.replace("เอาดิ","")
+     #                       gs = arif.getGroup(msg.to)
                             gs = ki.getGroup(msg.to)
                             gs = ki2.getGroup(msg.to)
                             gs = ki3.getGroup(msg.to)
                             gs = ki4.getGroup(msg.to)
-    #                       arif.sendMessage(msg.to,"「 Bye All 」")
-    #                       arif.sendMessage(msg.to,"「 Sory guys 」")
+                #            ki.sendMessage(msg.to,"「 Bye All 」")
+               #             ku.sendMessage(msg.to,"「 Sory guys 」")
                             targets = []
                             for g in gs.members:
                                 if _name in g.displayName:
@@ -1311,19 +1311,19 @@ def lineBot(op):
                                                     arif.sendMessage(msg.to,"") 
 #==============================================================================#          
                 elif text.lower() == 'mention':
-                    group = arif.getGroup(msg.to)
-                    nama = [contact.mid for contact in group.members]
-                    k = len(nama)//20
-                    for a in range(k+1):
-                        txt = u''
-                        s=0
-                        b=[]
-                        for i in group.members[a*20 : (a+1)*20]:
-                            b.append({"S":str(s), "E" :str(s+6), "M":i.mid})
-                            s += 7
-                            txt += u'@Alin \n'
-                        arif.sendMessage(to, text=txt, contentMetadata={u'MENTION': json.dumps({'MENTIONEES':b})}, contentType=0)
-                        arif.sendMessage(to, "Total {} Mention".format(str(len(nama))))          
+                    group = arif.getGroup(to)
+                    midMembers = [contact.mid for contact in group.members]
+                    midSelect = len(midMembers)//20
+                    for mentionMembers in range(midSelect+1):
+                            no = 0
+                            ret_ = "╔══[ Mention Members ]"
+                            dataMid = []
+                            for dataMention in group.members[mentionMembers*20 : (mentionMembers+1)*20]:
+                                    dataMid.append(dataMention.mid)
+                                    no += 1
+                                    ret_ += "\n╠ {}. @!".format(str(no))
+                            ret_ += "\n╚══[ Total {} Members]".format(str(len(dataMid)))
+                            arif.sendMention(to, ret_, dataMid)
                 elif text.lower() == 'lurking on':
                     tz = pytz.timezone("Asia/Jakarta")
                     timeNow = datetime.now(tz=tz)
