@@ -145,8 +145,8 @@ def helpmessage():
                   "│" + "\n" + \
                   "│✒✪〔 Help 〕✪────────" + "\n" + \
                   "│▪➤Help" + "\n" + \
-                  "│▪➤Translate" + "\n" + \
-                  "│▪➤Texttospeech" + "\n" + \
+                  "│▪➤Help2" + "\n" + \
+                  "│▪➤Help3" + "\n" + \
                   "│" + "\n" + \
                   "│✒✪〔 Protect 〕✪────" + "\n" + \
                   "│▪➤Protect 「On/Off」" + "\n" + \
