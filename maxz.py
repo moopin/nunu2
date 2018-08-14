@@ -607,16 +607,16 @@ def lineBot(op):
                 if text is None:
                     return
 #==============================================================================#
-                if text.lower() == 'h1':
+                if text.lower() == 'help1':
                     helpMessage = helpmessage()
                     gye.sendMessage(to, str(helpMessage))
                     gye.sendContact(to,)
                     gye.sendMessage(to,)
-                elif text.lower() == 'h2':
+                elif text.lower() == 'help2':
                     helpTextToSpeech = helptexttospeech()
                     gye.sendMessage(to, str(helpTextToSpeech))
                     gye.sendMessage(to,)
-                elif text.lower() == 'h3':
+                elif text.lower() == 'help3':
                     helpTranslate = helptranslate()
                     gye.sendMessage(to, str(helpTranslate))
                     gye.sendMessage(to,)
@@ -624,9 +624,9 @@ def lineBot(op):
                 elif text.lower() == 'sp':
                     #start = time.time()
                     gye.sendMessage(to, "ความเร็วอยู่ที่...")
-                    gye.sendMessage(to, "0.01213141526141")
-                    #elapsed_time = time.time() - start
-                    #gye.sendMessage(to,format(str(elapsed_time)))
+                    # gye.sendMessage(to, "0.01213141526141")
+                    elapsed_time = time.time() - start
+                    gye.sendMessage(to,format(str(elapsed_time)))
                 elif text.lower() == 'รีบอท':    
                     gye.sendMessage(to, "Please Wait...")
                     time.sleep(5)
@@ -640,7 +640,7 @@ def lineBot(op):
                 elif text.lower() == 'เรา':
                     try:
                         arr = []
-                        owner = "u104e95aaefb53cf411f77353f6a96ece"
+                        owner = "u4862fe4b182b2fd194a3108e2f3662e8"
                         creator = gye.getContact(owner)
                         contact = gye.getContact(gyeMID)
                         grouplist = gye.getGroupIdsJoined()
@@ -912,7 +912,7 @@ def lineBot(op):
                     settings["autoJoinTicket"] = False
                     gye.sendMessage(to, "Berhasil menonaktifkan Auto Join Link")                    
 #==============================================================================#
-                elif msg.text.lower() == 'บอท':
+                elif msg.text.lower() == 'mybot':
                         ais.sendContact(to, aisMID)
                         ais.sendMessage(msg.to,"➲ อยู่ครับเจ้านาย")
                         ki2.sendContact(to, ki2MID)
@@ -1079,15 +1079,15 @@ def lineBot(op):
                     G.preventedJoinByTicket(G)
                     gye.updateGroup(G)
                 
-                elif text.lower() == 'คท':
+                elif text.lower() == 'me':
                     sendMessageWithMention(to, gyeMID)
                     gye.sendContact(to, gyeMID)
-                elif text.lower() == 'มิด':
+                elif text.lower() == 'mid':
                     gye.sendMessage(msg.to,"[MID]\n" +  gyeMID)
-                elif text.lower() == 'ชื่ิอ':
+                elif text.lower() == 'myname':
                     me = gye.getContact(gyeMID)
                     gye.sendMessage(msg.to,"[DisplayName]\n" + me.displayName)
-                elif text.lower() == 'ตัส':
+                elif text.lower() == 'mybio':
                     me = gye.getContact(gyeMID)
                     gye.sendMessage(msg.to,"[StatusMessage]\n" + me.statusMessage)
                 elif text.lower() == 'รูป':
@@ -1276,7 +1276,7 @@ def lineBot(op):
                     urlnya = "http://chart.apis.google.com/chart?chs=480x80&cht=p3&chtt=" + textnya + "&chts=FFFFFF,70&chf=bg,s,000000"
                     gye.sendImageWithURL(msg.to, urlnya)
 #==============================================================================#
-                elif text.lower() == 'คนสร้างห้อง':
+                elif text.lower() == 'แอด':
                     group = gye.getGroup(to)
                     GS = group.creator.mid
                     gye.sendContact(to, GS)
@@ -1298,7 +1298,7 @@ def lineBot(op):
                             gye.sendMessage(to, "[ ลิ้งกลุ่มนี้ครับเจ้านาย ]\nhttps://line.me/R/ti/g/{}".format(str(ticket)))
                         else:
                             gye.sendMessage(to, "Grup qr tidak terbuka silahkan buka terlebih dahulu dengan perintah {}openqr".format(str(settings["keyCommand"])))
-                elif text.lower() == '#เปิดลิ้ง':
+                elif text.lower() == 'เปิดลิ้ง':
                     if msg.toType == 2:
                         group = gye.getGroup(to)
                         if group.preventedJoinByTicket == False:
@@ -1307,7 +1307,7 @@ def lineBot(op):
                             group.preventedJoinByTicket = False
                             gye.updateGroup(group)
                             gye.sendMessage(to, "เปิดลิ้งห้องให้แล้วครับเจ้านาย")
-                elif text.lower() == '#ปิดลิ้ง':
+                elif text.lower() == 'ปิดลิ้ง':
                     if msg.toType == 2:
                         group = gye.getGroup(to)
                         if group.preventedJoinByTicket == True:
@@ -1531,12 +1531,12 @@ def lineBot(op):
                 elif text.lower() == 'แทค':
                     group = gye.getGroup(msg.to)
                     nama = [contact.mid for contact in group.members]
-                    k = len(nama)//100
+                    k = len(nama)//20
                     for a in range(k+1):
                         txt = u''
                         s=0
                         b=[]
-                        for i in group.members[a*100 : (a+1)*100]:
+                        for i in group.members[a*20 : (a+1)*20]:
                             b.append({"S":str(s), "E" :str(s+6), "M":i.mid})
                             s += 7
                             txt += u'@Alin \n'
