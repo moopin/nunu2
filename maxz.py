@@ -232,9 +232,9 @@ ki28MID = ki28.profile.mid
 ki29MID = ki29.profile.mid
 ki30MID = ki30.profile.mid
 Bots = [gyeMID,aisMID,ki2MID,ki3MID,ki4MID,ki5MID,ki6MID,ki7MID,ki8MID,ki9MID,ki10MID,ki11MID,ki12MID,ki13MID,ki14MID,ki15MID,ki16MID,ki17MID,ki18MID,ki19MID,ki20MID,ki21MID,ki22MID,ki23MID,ki24MID,ki25MID,ki26MID,ki27MID,ki28MID,ki29MID,ki30MID] #ini jangan dinrubah Gunanya agar bot tidak saling kick
-creator = ["u104e95aaefb53cf411f77353f6a96ece"]
-Owner = ["u104e95aaefb53cf411f77353f6a96ece"]
-admin = ["u104e95aaefb53cf411f77353f6a96ece"]
+creator = ["u4862fe4b182b2fd194a3108e2f3662e8"]
+Owner = ["u4862fe4b182b2fd194a3108e2f3662e8"]
+admin = ["u4862fe4b182b2fd194a3108e2f3662e8"]
 
 gyeProfile = gye.getProfile()
 aisProfile = ais.getProfile()
@@ -427,7 +427,7 @@ def helpmessage():
                   "║͜͡☆➣ บาย.(ออกหมดทั้งคนทั้งบอท) " + "\n" + \
                   "║͜͡☆➣ เตะ @ (สั่งบอทเตะออก)" + "\n" + \
                   "║͜͡☆➣ เตะดึก @ (สั่งบอทเตะ)" + "\n" + \
-                  "║͜͡☆➣ คท " + "\n" + \
+                  "║͜͡☆➣ Me " + "\n" + \
                   "║͜͡☆➣ Sp " + "\n" + \
                   "║͜͡☆➣ เชคค่า " + "\n" + \
                   "║͜͡☆➣ บอท " + "\n" + \
@@ -439,7 +439,7 @@ def helpmessage():
                   "║͜͡☆➣ เชคบอท " + "\n" + \
                   "╰════════╬♥" + "\n" + \
                   "╭════════╬♥" + "\n" + \
-                  "║͜͡☆➣ Maibotline " + "\n" + \
+                  "║͜͡☆➣ Maxbotline " + "\n" + \
                   "╰════════╬♥"
     return helpMessage
     
@@ -466,8 +466,8 @@ def helptexttospeech():
                   "║͜͡☆➣ รายชื่อห้อง" + "\n" + \
                   "║͜͡☆➣ เชคห้อง" + "\n" + \
                   "║͜͡☆➣ ลิ้งห้อง" + "\n" + \
-                  "║͜͡☆➣ #เปิดลิ้ง" + "\n" + \
-                  "║͜͡☆➣ #ปิดลิ้ง" + "\n" + \
+                  "║͜͡☆➣ เปิดลิ้ง" + "\n" + \
+                  "║͜͡☆➣ ปิดลิ้ง" + "\n" + \
                   "║͜͡☆➣ พิมตาม on/off " + "\n" + \
                   "║͜͡☆➣ รายชื่อพิมตาม " + "\n" + \
                   "║͜͡☆➣ เพิ่มพิมตาม" + "\n" + \
@@ -478,7 +478,7 @@ def helptexttospeech():
                   "║͜͡☆➣ คนอ่าน" + "\n" + \
                   "╰════════╬♥" + "\n" + \
                   "╭════════╬♥" + "\n" + \
-                  "║͜͡☆➣ Maibotline " + "\n" + \
+                  "║͜͡☆➣ Maxbotline " + "\n" + \
                   "╰════════╬♥"
     return helpTextToSpeech
     
@@ -489,12 +489,12 @@ def helptranslate():
                   "║͜͡☆➣ เชคแบน" + "\n" + \
                   "║͜͡☆➣ ล้างแบน" + "\n" + \
                   "║͜͡☆➣ รีบอท" + "\n" + \
-                  "║͜͡☆➣ บอท " + "\n" + \
+                  "║͜͡☆➣ Mybot " + "\n" + \
                   "║͜͡☆➣ มี " + "\n" + \
-                  "║͜͡☆➣ มิด" + "\n" + \
+                  "║͜͡☆➣ Mid" + "\n" + \
                   "║͜͡☆➣ มิด @" + "\n" + \
-                  "║͜͡☆➣ ชื่อ" + "\n" + \
-                  "║͜͡☆➣ ตัส" + "\n" + \
+                  "║͜͡☆➣ Myname" + "\n" + \
+                  "║͜͡☆➣ Mybio" + "\n" + \
                   "║͜͡☆➣ รูป" + "\n" + \
                   "║͜͡☆➣ รูปวีดีโอ" + "\n" + \
                   "║͜͡☆➣ รูปปก" + "\n" + \
@@ -510,14 +510,14 @@ def helptranslate():
                   "║͜͡☆➣ ชื่อห้อง" + "\n" + \
                   "║͜͡☆➣ รูปห้อง" + "\n" + \
                   "║͜͡☆➣ ลิ้งห้อง" + "\n" + \
-                  "║͜͡☆➣ #เปิดลิ้ง" + "\n" + \
+                  "║͜͡☆➣ เปิดลิ้ง" + "\n" + \
                   "║͜͡☆➣ รายชื่อห้อง" + "\n" + \
-                  "║͜͡☆➣ #ปิดลิ้ง" + "\n" + \
+                  "║͜͡☆➣ ปิดลิ้ง" + "\n" + \
                   "║͜͡☆➣ เชคห้อง" + "\n" + \
                   "║͜͡☆➣ เตะ @" + "\n" + \
                   "╰════════╬♥" + "\n" + \
                   "╭════════╬♥" + "\n" + \
-                  "║͜͡☆➣ Maibotline " + "\n" + \
+                  "║͜͡☆➣ Maxbotline " + "\n" + \
                   "╰════════╬♥"
     return helpTranslate
 #==============================================================================#
