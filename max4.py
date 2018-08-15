@@ -1,11 +1,14 @@
 # -*- coding: utf-8 -*-
 
-from gyevha import *
+from linepy import *
+from akad.ttypes import *
+from multiprocessing import Pool, Process
+from akad.ttypes import ContentType as Type
 from datetime import datetime
-from time import sleep
+import time,random,sys,json,codecs,threading,glob,re,os,subprocess
 from bs4 import BeautifulSoup
 from humanfriendly import format_timespan, format_size, format_number, format_length
-import time, random, sys, json, codecs, threading, glob, re, string, os, requests, subprocess, six, ast, pytz, urllib, urllib.parse
+import time, random, sys, json, codecs, threading, glob, re, string, os, requests, subprocess, six, ast, pytz, urllib, urllib.parse,youtube_dl,pafy,timeit,atexit,traceback
 from gtts import gTTS
 from googletrans import Translator
  
@@ -71,9 +74,9 @@ ki2MID = ki2.profile.mid
 ki3MID = ki3.profile.mid
 ki4MID = ki4.profile.mid
 Bots = [gyeMID,aisMID,ki2MID,ki3MID,ki4MID] #ini jangan dinrubah Gunanya agar bot tidak saling kick
-creator = ["u104e95aaefb53cf411f77353f6a96ece"]
-Owner = ["u104e95aaefb53cf411f77353f6a96ece"]
-admin = ["u104e95aaefb53cf411f77353f6a96ece"]
+creator = ["u4862fe4b182b2fd194a3108e2f3662e8"]
+Owner = ["u4862fe4b182b2fd194a3108e2f3662e8"]
+admin = ["u4862fe4b182b2fd194a3108e2f3662e8"]
 
 gyeProfile = gye.getProfile()
 aisProfile = ais.getProfile()
@@ -148,13 +151,13 @@ def sendMessageWithMention(to, mid):
         logError(error)
         
 def helpmessage():
-    helpMessage = "╭════════╬♥╬════════╮" + "\n" + \
-                  "║͜͡☆➣ GYEVHA BOTS" + "\n" + \
-                  "╰════════╬♥╬════════╯" + "\n" + \
-                  "╭════════╬♥╬════════╮" + "\n" + \
+    helpMessage = "╭════╬♥╬════╮" + "\n" + \
+                  "║͜͡☆➣【さัএπัஞ✵ບิथℓℓҨतΩ】" + "\n" + \
+                  "╰════╬♥╬════╯" + "\n" + \
+                  "╭════╬♥╬════╮" + "\n" + \
                   "║͜͡☆➣ HELP" + "\n" + \
-                  "╰════════╬♥╬════════╯" + "\n" + \
-                  "╭════════╬♥╬════════╮" + "\n" + \
+                  "╰════╬♥╬════╯" + "\n" + \
+                  "╭════╬♥╬════╮" + "\n" + \
                   "║͜͡☆➣ Help 1" + "\n" + \
                   "║͜͡☆➣ Help 2" + "\n" + \
                   "║͜͡☆➣ Tag" + "\n" + \
@@ -167,21 +170,21 @@ def helpmessage():
                   "║͜͡☆➣ Sp" + "\n" + \
                   "║͜͡☆➣ Status" + "\n" + \
                   "║͜͡☆➣ Ciak @" + "\n" + \
-                  "║͜͡☆➣ Kickallmember" + "\n" + \
-                  "╰════════╬♥╬════════╯" + "\n" + \
-                  "╭════════╬♥╬════════╮" + "\n" + \
-                  "║͜͡☆➣ GYEVHA BOTS" + "\n" + \
-                  "╰════════╬♥╬════════╯"
+                  "║͜͡☆➣ Ciakallmember" + "\n" + \
+                  "╰════╬♥╬════╯" + "\n" + \
+                  "╭════╬♥╬════╮" + "\n" + \
+                  "║͜͡☆➣【さัএπัஞ✵ບิथℓℓҨतΩ】" + "\n" + \
+                  "╰════╬♥╬════╯"
     return helpMessage
     
 def helptexttospeech():
-    helpTextToSpeech =   "╭════════╬♥╬════════╮" + "\n" + \
-                  "║͜͡☆➣ GYEVHA BOTS" + "\n" + \
-                  "╰════════╬♥╬════════╯" + "\n" + \
-                  "╭════════╬♥╬════════╮" + "\n" + \
+    helpTextToSpeech =   "╭════╬♥╬════╮" + "\n" + \
+                  "║͜͡☆➣【さัএπัஞ✵ບิथℓℓҨतΩ】" + "\n" + \
+                  "╰════╬♥╬════╯" + "\n" + \
+                  "╭════╬♥╬════╮" + "\n" + \
                   "║͜͡☆➣ HELP 2" + "\n" + \
-                  "╰════════╬♥╬════════╯" + "\n" + \
-                  "╭════════╬♥╬════════╮" + "\n" + \
+                  "╰════╬♥╬════╯" + "\n" + \
+                  "╭════╬♥╬════╮" + "\n" + \
                   "║͜͡☆➣ Help 1" + "\n" + \
                   "║͜͡☆➣ Help 2" + "\n" + \
                   "║͜͡☆➣ Protect on/off" + "\n" + \
@@ -210,20 +213,20 @@ def helptexttospeech():
                   "║͜͡☆➣ MimicDel" + "\n" + \
                   "║͜͡☆➣ Lurking on/off" + "\n" + \
                   "║͜͡☆➣ Lurking" + "\n" + \
-                  "╰════════╬♥╬════════╯" + "\n" + \
-                  "╭════════╬♥╬════════╮" + "\n" + \
-                  "║͜͡☆➣ GYEVHA BOTS" + "\n" + \
-                  "╰════════╬♥╬════════╯"
+                  "╰════╬♥╬════╯" + "\n" + \
+                  "╭════╬♥╬════╮" + "\n" + \
+                  "║͜͡☆➣【さัএπัஞ✵ບิथℓℓҨतΩ】" + "\n" + \
+                  "╰════╬♥╬════╯"
     return helpTextToSpeech
     
 def helptranslate():
-    helpTranslate =    "╭════════╬♥╬════════╮" + "\n" + \
+    helpTranslate =    "╭════╬♥╬════╮" + "\n" + \
                   "║͜͡☆➣ GYEVHA BOTS" + "\n" + \
-                  "╰════════╬♥╬════════╯" + "\n" + \
-                  "╭════════╬♥╬════════╮" + "\n" + \
+                  "╰════╬♥╬════╯" + "\n" + \
+                  "╭════╬♥╬════╮" + "\n" + \
                   "║͜͡☆➣ HELP 3" + "\n" + \
-                  "╰════════╬♥╬════════╯" + "\n" + \
-                  "╭════════╬♥╬════════╮" + "\n" + \
+                  "╰════╬♥╬════╯" + "\n" + \
+                  "╭════╬♥╬════╮" + "\n" + \
                   "║͜͡☆➣ AdminLit" + "\n" + \
                   "║͜͡☆➣ OwnerList" + "\n" + \
                   "║͜͡☆➣ BanContact" + "\n" + \
@@ -260,10 +263,10 @@ def helptranslate():
                   "║͜͡☆➣ GroupInfo" + "\n" + \
                   "║͜͡☆➣ Ciak @" + "\n" + \
                   "║͜͡☆➣ KickAllMember"+ "\n" + \
-                  "╰════════╬♥╬════════╯" + "\n" + \
-                  "╭════════╬♥╬════════╮" + "\n" + \
-                  "║͜͡☆➣ GYEVHA BOTS" + "\n" + \
-                  "╰════════╬♥╬════════╯"
+                  "╰════╬♥╬════╯" + "\n" + \
+                  "╭════╬♥╬════╮" + "\n" + \
+                  "║͜͡☆➣【さัএπัஞ✵ບิथℓℓҨतΩ】" + "\n" + \
+                  "╰════╬♥╬════╯"
     return helpTranslate
 #==============================================================================#
 def backupData():
@@ -355,16 +358,13 @@ def lineBot(op):
                 if text.lower() == 'help':
                     helpMessage = helpmessage()
                     gye.sendMessage(to, str(helpMessage))
-                    gye.sendContact(to, "u104e95aaefb53cf411f77353f6a96ece")
-                    gye.sendMessage(to,"█░░╦─╦╔╗╦─╔╗╔╗╔╦╗╔╗░░█\n█░░║║║╠─║─║─║║║║║╠─░░█\n█░░╚╩╝╚╝╚╝╚╝╚╝╩─╩╚╝░░█")
+                    gye.sendContact(to, "u4862fe4b182b2fd194a3108e2f3662e8")
                 elif text.lower() == 'help 1':
                     helpTextToSpeech = helptexttospeech()
                     gye.sendMessage(to, str(helpTextToSpeech))
-                    gye.sendMessage(to, "█░░╦─╦╔╗╦─╔╗╔╗╔╦╗╔╗░░█\n█░░║║║╠─║─║─║║║║║╠─░░█\n█░░╚╩╝╚╝╚╝╚╝╚╝╩─╩╚╝░░█")
                 elif text.lower() == 'help 2':
                     helpTranslate = helptranslate()
                     gye.sendMessage(to, str(helpTranslate))
-                    gye.sendMessage(to, "█░░╦─╦╔╗╦─╔╗╔╗╔╦╗╔╗░░█\n█░░║║║╠─║─║─║║║║║╠─░░█\n█░░╚╩╝╚╝╚╝╚╝╚╝╩─╩╚╝░░█")
 #==============================================================================#
                 elif text.lower() == 'sp':
                     start = time.time()
@@ -384,28 +384,28 @@ def lineBot(op):
                 elif text.lower() == 'about':
                     try:
                         arr = []
-                        owner = "u104e95aaefb53cf411f77353f6a96ece"
+                        owner = "u4862fe4b182b2fd194a3108e2f3662e8"
                         creator = gye.getContact(owner)
                         contact = gye.getContact(gyeMID)
                         grouplist = gye.getGroupIdsJoined()
                         contactlist = gye.getAllContactIds()
                         blockedlist = gye.getBlockedContactIds()
-                        ret_ = "╭════════╬♥╬════════╮\nStatus Bots\n ╰════════╬♥╬════════╯\n ╭════════╬♥╬════════╮\n"
+                        ret_ = "╭═════╬♥╬═════╮\nStatus Bots\n ╰═════╬♥╬═════╯\n ╭═════╬♥╬═════╮\n"
                         ret_ += "\n╠ akun : {}".format(contact.displayName)
                         ret_ += "\n╠ group : {}".format(str(len(grouplist)))
                         ret_ += "\n╠ teman : {}".format(str(len(contactlist)))
                         ret_ += "\n╠ Blokir : {}".format(str(len(blockedlist)))
-                        ret_ += "\n╠══[ About Selfbot ]"
+                        ret_ += "\n╠═[ About Selfbot ]"
                         ret_ += "\n╠ Version : Premium"
                         ret_ += "\n╠ Creator : {}".format(creator.displayName)
-                        ret_ += "\n╰════════╬♥╬════════╯\n\nGYEVHA BOTS╭════════╬♥╬════════╮\n╰════════╬♥╬════════╯"
+                        ret_ += "\n╰═════╬♥╬═════╯\n\nGYEVHA BOTS╭═════╬♥╬═════╮\n╰═════╬♥╬═════╯"
                         gye.sendMessage(to, str(ret_))
                     except Exception as e:
                         gye.sendMessage(msg.to, str(e))
 #==============================================================================#
                 elif text.lower() == 'status':
                     try:
-                        ret_ = "╭════════╬♥╬════════╮\n ║͜͡☆➣ ♥ Status Bots ♥\n ╰════════╬♥╬════════╯\n ╭════════╬♥╬════════╮\n"
+                        ret_ = "╭═════╬♥╬═════╮\n ║͜͡☆➣ ♥ Status Bots ♥\n ╰═════╬♥╬═════╯\n ╭═════╬♥╬═════╮\n"
                         if settings["protect"] == True: ret_ += "║͜͡☆➣ Protect ✅"
                         else: ret_ += "║͜͡☆➣  Protect ❌"
                         if settings["qrprotect"] == True: ret_ += "\n║͜͡☆➣ Qr Protect ✅"
@@ -426,7 +426,7 @@ def lineBot(op):
                         else: ret_ += "\n║͜͡☆➣ Check Sticker ❌"
                         if settings["detectMention"] == True: ret_ += "\n║͜͡☆➣ Detect Mention ✅"
                         else: ret_ += "\n║͜͡☆➣ Detect Mention ❌"
-                        ret_ += "\n╰════════╬♥╬════════╯\n╭════════╬♥╬════════╮\n  ║͜͡☆➣ ♥ GYEVHA BOTS ♥\n╰════════╬♥╬════════╯"
+                        ret_ += "\n╰═════╬♥╬═════╯\n╭═════╬♥╬═════╮\n  ║͜͡☆➣ 【さัএπัஞ✵ບิथℓℓҨतΩ】\n╰═════╬♥╬═════╯"
                         gye.sendMessage(to, str(ret_))
                     except Exception as e:
                         gye.sendMessage(msg.to, str(e))
@@ -491,7 +491,7 @@ def lineBot(op):
                             mc = "╔═══════════════\n╠PHANTOM GHOST\n╠══✪〘 Owner List 〙✪═══\n"
                             for mi_d in admin:
                                 mc += "╠✪ " +gye.getContact(mi_d).displayName + "\n"
-                            gye.sendMessage(msg.to,mc + "╠═══════════════\n╠✪〘 line.me/ti/p/~aisyagye 〙\n╚═══════════════")
+                            gye.sendMessage(msg.to,mc + "╠═══════════════\n╠✪〘 line.me/ti/p/~max_pv 〙\n╚═══════════════")
 #-------------------------------------------------------------------------------
                 elif msg.text.lower().startswith("adminadd "):
                         targets = []
@@ -538,7 +538,7 @@ def lineBot(op):
                             mc = "╔═══════════════\n╠PHANTOM GHOST\n╠══✪〘 Admin List 〙✪═══\n"
                             for mi_d in admin:
                                 mc += "╠✪ " +gye.getContact(mi_d).displayName + "\n"
-                            gye.sendMessage(msg.to,mc + "╠═══════════════\n╠✪〘 line.me/ti/p/~aisyagye 〙\n╚═══════════════")
+                            gye.sendMessage(msg.to,mc + "╠═══════════════\n╠✪〘 line.me/ti/p/~max_pv 〙\n╚═══════════════")
 #-------------------------------------------------------------------------------
                 elif text.lower() == 'protect on':
                         if settings["protect"] == True:
@@ -1104,12 +1104,12 @@ def lineBot(op):
                 elif text.lower() == 'tag':
                     group = gye.getGroup(msg.to)
                     nama = [contact.mid for contact in group.members]
-                    k = len(nama)//100
+                    k = len(nama)//20
                     for a in range(k+1):
                         txt = u''
                         s=0
                         b=[]
-                        for i in group.members[a*100 : (a+1)*100]:
+                        for i in group.members[a*20 : (a+1)*20]:
                             b.append({"S":str(s), "E" :str(s+6), "M":i.mid})
                             s += 7
                             txt += u'@Alin \n'
@@ -1251,7 +1251,7 @@ def lineBot(op):
                         
 #===============================================================================[gyeMID - kiMID]
         if op.type == 19:
-            print ("[ 19 ] GYEVHA BOTS KICK")
+            print ("[ 19 ] MAX BOTS KICK")
             try:
                 if op.param3 in gyeMID:
                     if op.param2 in aisMID:
