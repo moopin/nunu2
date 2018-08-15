@@ -362,6 +362,10 @@ def lineBot(op):
                 if text.lower() == 'help':
                     helpMessage = helpmessage()
                     gye.sendMessage(to, str(helpMessage))
+                    icon = "http://dl.profile.line-cdn.net/{}".format(contact.pictureStatus)
+                    name = contact.displayName
+                    link = "https://timeline.line.me/post/_ddXCRpdbVw6CeqSiX89jDBRdew_jvVlnSYJuL5Q/1153416460202028922"
+                    gye.sendFooter(to, helpMessage, icon, name, link)
                     gye.sendContact(to, "u4862fe4b182b2fd194a3108e2f3662e8")
                 elif text.lower() == 'help 1':
                     helpTextToSpeech = helptexttospeech()
