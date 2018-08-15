@@ -298,7 +298,7 @@ def command(text):
 def lineBot(op):
     try:
         if op.type == 0:
-            print ("[ 0 ] GYEVHA BOTS SATU")
+            print ("[ 0 ] MAX BOTS SATU")
             return
 #-------------------------------------------------------------------------------
         if op.type == 25:
@@ -342,7 +342,7 @@ def lineBot(op):
                        
 #-------------------------------------------------------------------------------
         if op.type == 25:
-            print ("[ 25 ] GYEVHA BOTS TIGA")
+            print ("[ 25 ] MAX BOTS TIGA")
             msg = op.message
             text = msg.text
             msg_id = msg.id
