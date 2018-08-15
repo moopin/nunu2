@@ -155,13 +155,13 @@ def sendMessageWithMention(to, mid):
         logError(error)
         
 def helpmessage():
-    helpMessage = "╭════╬♥╬════╮" + "\n" + \
+    helpMessage = "╭══════╬♥╬══════╮" + "\n" + \
                   "║͜͡☆➣【さัএπัஞ✵ບิथℓℓҨतΩ】" + "\n" + \
-                  "╰════╬♥╬════╯" + "\n" + \
-                  "╭════╬♥╬════╮" + "\n" + \
+                  "╰══════╬♥╬══════╯" + "\n" + \
+                  "╭══════╬♥╬══════╮" + "\n" + \
                   "║͜͡☆➣ HELP" + "\n" + \
-                  "╰════╬♥╬════╯" + "\n" + \
-                  "╭════╬♥╬════╮" + "\n" + \
+                  "╰══════╬♥╬══════╯" + "\n" + \
+                  "╭══════╬♥╬══════╮" + "\n" + \
                   "║͜͡☆➣ Help 1" + "\n" + \
                   "║͜͡☆➣ Help 2" + "\n" + \
                   "║͜͡☆➣ Tag" + "\n" + \
@@ -175,20 +175,20 @@ def helpmessage():
                   "║͜͡☆➣ Status" + "\n" + \
                   "║͜͡☆➣ Ciak @" + "\n" + \
                   "║͜͡☆➣ Ciakallmember" + "\n" + \
-                  "╰════╬♥╬════╯" + "\n" + \
-                  "╭════╬♥╬════╮" + "\n" + \
+                  "╰══════╬♥╬══════╯" + "\n" + \
+                  "╭══════╬♥╬══════╮" + "\n" + \
                   "║͜͡☆➣【さัএπัஞ✵ບิथℓℓҨतΩ】" + "\n" + \
-                  "╰════╬♥╬════╯"
+                  "╰══════╬♥╬══════╯"
     return helpMessage
     
 def helptexttospeech():
-    helpTextToSpeech =   "╭════╬♥╬════╮" + "\n" + \
+    helpTextToSpeech =   "╭══════╬♥╬══════╮" + "\n" + \
                   "║͜͡☆➣【さัএπัஞ✵ບิथℓℓҨतΩ】" + "\n" + \
-                  "╰════╬♥╬════╯" + "\n" + \
-                  "╭════╬♥╬════╮" + "\n" + \
+                  "╰══════╬♥╬══════╯" + "\n" + \
+                  "╭══════╬♥╬══════╮" + "\n" + \
                   "║͜͡☆➣ HELP 2" + "\n" + \
-                  "╰════╬♥╬════╯" + "\n" + \
-                  "╭════╬♥╬════╮" + "\n" + \
+                  "╰══════╬♥╬══════╯" + "\n" + \
+                  "╭══════╬♥╬══════╮" + "\n" + \
                   "║͜͡☆➣ Help 1" + "\n" + \
                   "║͜͡☆➣ Help 2" + "\n" + \
                   "║͜͡☆➣ Protect on/off" + "\n" + \
@@ -217,20 +217,20 @@ def helptexttospeech():
                   "║͜͡☆➣ MimicDel" + "\n" + \
                   "║͜͡☆➣ Lurking on/off" + "\n" + \
                   "║͜͡☆➣ Lurking" + "\n" + \
-                  "╰════╬♥╬════╯" + "\n" + \
-                  "╭════╬♥╬════╮" + "\n" + \
+                  "╰══════╬♥╬══════╯" + "\n" + \
+                  "╭══════╬♥╬══════╮" + "\n" + \
                   "║͜͡☆➣【さัএπัஞ✵ບิथℓℓҨतΩ】" + "\n" + \
-                  "╰════╬♥╬════╯"
+                  "╰══════╬♥╬══════╯"
     return helpTextToSpeech
     
 def helptranslate():
-    helpTranslate =    "╭════╬♥╬════╮" + "\n" + \
-                  "║͜͡☆➣ GYEVHA BOTS" + "\n" + \
-                  "╰════╬♥╬════╯" + "\n" + \
-                  "╭════╬♥╬════╮" + "\n" + \
+    helpTranslate =    "╭══════╬♥╬══════╮" + "\n" + \
+                  "║͜͡☆➣【さัএπัஞ✵ບิथℓℓҨतΩ】" + "\n" + \
+                  "╰══════╬♥╬══════╯" + "\n" + \
+                  "╭══════╬♥╬══════╮" + "\n" + \
                   "║͜͡☆➣ HELP 3" + "\n" + \
-                  "╰════╬♥╬════╯" + "\n" + \
-                  "╭════╬♥╬════╮" + "\n" + \
+                  "╰══════╬♥╬══════╯" + "\n" + \
+                  "╭══════╬♥╬══════╮" + "\n" + \
                   "║͜͡☆➣ AdminLit" + "\n" + \
                   "║͜͡☆➣ OwnerList" + "\n" + \
                   "║͜͡☆➣ BanContact" + "\n" + \
@@ -267,10 +267,10 @@ def helptranslate():
                   "║͜͡☆➣ GroupInfo" + "\n" + \
                   "║͜͡☆➣ Ciak @" + "\n" + \
                   "║͜͡☆➣ KickAllMember"+ "\n" + \
-                  "╰════╬♥╬════╯" + "\n" + \
-                  "╭════╬♥╬════╮" + "\n" + \
+                  "╰══════╬♥╬══════╯" + "\n" + \
+                  "╭══════╬♥╬══════╮" + "\n" + \
                   "║͜͡☆➣【さัএπัஞ✵ບิथℓℓҨतΩ】" + "\n" + \
-                  "╰════╬♥╬════╯"
+                  "╰══════╬♥╬══════╯"
     return helpTranslate
 #==============================================================================#
 def backupData():
@@ -1034,11 +1034,11 @@ def lineBot(op):
                         ki4.sendMessage(msg.to,"➲ Jangan Jadi Penjahat yah kakak Agar Tak Masuk Blaclist ku")
                         
                 elif text.lower() == 'absen':
-                        gye.sendMessage(msg.to,"➲ Gye 1")
-                        ais.sendMessage(msg.to,"➲ Gye 2")
-                        ki2.sendMessage(msg.to,"➲ Gye 3")
-                        ki3.sendMessage(msg.to,"➲ Gye 4")
-                        ki4.sendMessage(msg.to,"➲ Gye 5")
+                        gye.sendMessage(msg.to,"➲ 【さัএπัஞ✵ບิथℓℓҨतΩ】 1")
+                        ais.sendMessage(msg.to,"➲ 【さัএπัஞ✵ບิथℓℓҨतΩ】 2")
+                        ki2.sendMessage(msg.to,"➲ 【さัএπัஞ✵ບิथℓℓҨतΩ】 3")
+                        ki3.sendMessage(msg.to,"➲ 【さัএπัஞ✵ບิथℓℓҨतΩ】 4")
+                        ki4.sendMessage(msg.to,"➲ 【さัএπัஞ✵ບิथℓℓҨतΩ】 5")
                         gye.sendMessage(msg.to,"➲ Jangan Songong Pake Sc Orang")
                         
                 elif text.lower() == 'bancontact':
