@@ -49,10 +49,10 @@ cxb.log("Channel Access Token : " + str(channel11.channelAccessToken))
 
 poll = LinePoll(cl)
 call = LineCall(cl)
-creator = ["MID"]
-owner = ["MID"]
-admin = ["MID"]
-staff = ["MID"]
+creator = ["u4862fe4b182b2fd194a3108e2f3662e8"]
+owner = ["u4862fe4b182b2fd194a3108e2f3662e8"]
+admin = ["u4862fe4b182b2fd194a3108e2f3662e8"]
+staff = ["u4862fe4b182b2fd194a3108e2f3662e8"]
 mid = cl.getProfile().mid
 Amid = ki.getProfile().mid
 Bmid = kk.getProfile().mid
