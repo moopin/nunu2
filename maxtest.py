@@ -1,12 +1,15 @@
 # -*- coding: utf-8 -*- 
 from linepy import *
+from akad.ttypes import *
 from multiprocessing import Pool, Process
-from time import sleep
-import pytz, datetime, pafy, time, timeit, random, sys, ast, re, os, json, subprocess, threading, string, codecs, requests, tweepy, ctypes, urllib, wikipedia
-from datetime import timedelta, date
+from akad.ttypes import ContentType as Type
 from datetime import datetime
+import time,random,sys,json,codecs,threading,glob,re,os,subprocess
 from bs4 import BeautifulSoup
-import youtube_dl
+from humanfriendly import format_timespan, format_size, format_number, format_length
+import time, random, sys, json, codecs, threading, glob, re, string, os, requests, subprocess, six, ast, pytz, urllib, urllib.parse,youtube_dl,pafy,timeit,atexit,traceback
+from gtts import gTTS
+from googletrans import Translator
 
 cl = LineClient(authToken='EuSPuZTCziqAQRZsgN57.Egq9cEqQnOnQf8YrIwoOTW.CoGhN/amKI6iz7A3IPgKMrSwonEiJYASVQZ4L4ccoPw=')
 cl.log("Auth Token : " + str(cl.authToken))
@@ -44,10 +47,10 @@ channel8 = LineChannel(cxb)
 cxb.log("Channel Access Token : " + str(channel8.channelAccessToken))
 
 poll = LinePoll(cl)
-creator = ["u78643d09e42a36836a17cc918963a8b7"]
-owner = ["u78643d09e42a36836a17cc918963a8b7"]
-admin = ["u78643d09e42a36836a17cc918963a8b7"]
-staff = ["u78643d09e42a36836a17cc918963a8b7"]
+creator = ["u4862fe4b182b2fd194a3108e2f3662e8"]
+owner = ["u4862fe4b182b2fd194a3108e2f3662e8"]
+admin = ["u4862fe4b182b2fd194a3108e2f3662e8"]
+staff = ["u4862fe4b182b2fd194a3108e2f3662e8"]
 mid = cl.getProfile().mid
 Amid = ki.getProfile().mid
 Bmid = kk.getProfile().mid
@@ -74,7 +77,7 @@ responsename4 = km.getProfile().displayName
 responsename5 = kb.getProfile().displayName
 
 setowner ="""╭═══════╬╬════════╮
-╞☪ TΣΔM SLΔCҜβΩT
+╞☪【さัএπัஞ✵ບิथℓℓҨतΩ】
 ╰═══════╬╬════════╯
 ╭═══════╬╬════════╮
 ╞☪ Me
@@ -155,7 +158,7 @@ setowner ="""╭═══════╬╬════════╮
 """
 
 helpMessage ="""╭═══════╬╬════════╮
-╞☪ TΣΔM SLΔCҜβΩT
+╞☪【さัএπัஞ✵ບิथℓℓҨतΩ】
 ╰═══════╬╬════════╯
 ╭═══════╬╬════════╮
 ╞☪ Me
@@ -197,7 +200,7 @@ helpMessage ="""╭═══════╬╬════════╮
 ╞☪ Restart
 ╰═══════╬╬════════╯
 ╭═══════╬╬════════╮
-╞☪ ɪɴғᴏ ᴍᴇɴᴜ βΩT
+╞☪ ɪɴғᴏ ᴍᴇɴᴜ βOT
 ╰═══════╬╬════════╯
 ╭═══════╬╬════════╮
 ╞☪ Informasi
@@ -335,15 +338,15 @@ wait = {
     'autoAdd':True,
     'autoLeave':False,
     'autoLeave1':False,
-    "detectMention":False,
+    "detectMention":True,
     "Mentionkick":False,
     "welcomeOn":False,
     "sticker":False,
     "selfbot":True,
     "mention":"Masuk kuy awas dingin",
-    "Respontag":"Njirrr tag pc napa",
-    "welcome":"Wellcome to",
-    "comment":"Like By : TΣΔM SLΔCҜβΩT",
+    "Respontag":"Yahuu 😆",
+    "welcome":"Welcome to ",
+    "comment":"Like By :【さัএπัஞ✵ບิथℓℓҨतΩ】",
     "message":"Thanks for add me 😃",
     }
 
@@ -1302,10 +1305,10 @@ def bot(op):
                      kb.sendMessage(msg.to, "succes change pic")
                if text is None:
                    return
-               elif msg.text.lower() == "keyword":
+               elif msg.text.lower() == "help 1":
                  if msg._from in owner or msg._from in admin or msg._from in staff:
                      cl.sendMessage(msg.to, setowner)
-               elif msg.text.lower() == "keyword2":
+               elif msg.text.lower() == "help 2":
                  if msg._from in owner or msg._from in admin or msg._from in staff:
                      cl.sendMessage(msg.to, setadmin)
                elif "Mid" == msg.text:
@@ -1316,7 +1319,7 @@ def bot(op):
                    mi = cl.getContact(key1)
                    cl.sendMessage(msg.to, "Nama : "+str(mi.displayName)+"\nMID : " +key1)
                    cl.sendMessage(msg.to, None, contentMetadata={'mid': key1}, contentType=13)
-               elif text.lower() == 'informasi':
+               elif text.lower() == 'about':
                  if msg._from in owner or msg._from in admin or msg._from in staff:
                     name_ = cl.getContact(mid).displayName
                     foto_ = cl.getContact(mid).picturePath
@@ -1329,7 +1332,7 @@ def bot(op):
                         cl.sendVideoWithURL(msg.to, 'http://dl.profile.line.naver.jp'+foto_+'/vp.small')
                     else:
                         cl.sendImageWithURL(msg.to, 'http://dl.profile.line.naver.jp'+foto_)
-               elif text.lower() == 'settings':
+               elif text.lower() == 'set':
                  if msg._from in owner or msg._from in admin or msg._from in staff:
                    md = "╭═══════╬╬════════╮\n╞☪ sᴇᴛᴛɪɴɢ ᴘʀᴏ ʙᴏᴛ\n╰═══════╬╬════════╯\n╭═══════╬╬════════╮\n"
                    if wait["sticker"] == True: md+="╞☪ Sticker「⚫」\n"
@@ -1420,7 +1423,7 @@ def bot(op):
                    if creator == []:
                         cl.sendMessage(msg.to,"Kosong")
                    else:
-                        cl.sendMessage(msg.to, "TΣΔM SLΔCҜβΩT")
+                        cl.sendMessage(msg.to, "【さัএπัஞ✵ບิथℓℓҨतΩ】")
                         h = ""
                         for i in creator:
                              h = cl.getContact(i)
@@ -1601,55 +1604,18 @@ def bot(op):
                  if msg._from in owner or msg._from in admin or msg._from in staff:
                    group = cl.getGroup(msg.to)
                    nama = [contact.mid for contact in group.members]
-                   nm1, nm2, nm3, nm4, jml = [], [], [], [], len(nama)
-                   if jml <= 100:
-                       mentionMembers(msg.to, nama)
-                   if jml > 100 and jml < 200:
-                       for i in range (0, 99):
-                           nm1 += [nama[i]]
-                       mentionMembers(msg.to, nm1)
-                       for j in range (100, len(nama)-1):
-                           nm2 += [nama[j]]
-                       mentionMembers(msg.to, nm2)
-                   if jml > 200 and jml < 300:
-                       for i in range (0, 99):
-                           nm1 += [nama[i]]
-                       mentionMembers(msg.to, nm1)
-                       for j in range (100, 199):
-                           nm2 += [nama[j]]
-                       mentionMembers(msg.to, nm2)
-                       for k in range (200, len(nama)-1):
-                           nm3 += [nama[k]]
-                       mentionMembers(msg.to, nm3)
-                   if jml > 300 and jml < 400:
-                       for i in range (0, 99):
-                           nm1 += [nama[i]]
-                       mentionMembers(msg.to, nm1)
-                       for j in range (100, 199):
-                           nm2 += [nama[j]]
-                       mentionMembers(msg.to, nm2)
-                       for k in range (200, 299):
-                           nm3 += [nama[k]]
-                       mentionMembers(msg.to, nm3)
-                       for l in range (300, len(nama)-1):
-                           nm4 += [nama[l]]
-                       mentionMembers(msg.to, nm4)
-                   if jml > 400 and jml < 500:
-                       for i in range (0, 99):
-                           nm1 += [nama[i]]
-                       mentionMembers(msg.to, nm1)
-                       for j in range (100, 199):
-                           nm2 += [nama[j]]
-                       mentionMembers(msg.to, nm2)
-                       for k in range (200, 299):
-                           nm3 += [nama[k]]
-                       mentionMembers(msg.to, nm3)
-                       for l in range (300, 399):
-                           nm4 += [nama[l]]
-                       mentionMembers(msg.to, nm4)
-                       for m in range (400, len(nama)-1):
-                           nm5 += [nama[m]]
-                       mentionMembers(msg.to, nm5)
+                   k = len(nama)//20
+                   for a in range(k+1):
+                       txt = u''
+                       s=0
+                       b=[]
+                       for i in group.members[a*20 : (a+1)*20]:
+                           b.append({"S":str(s), "E" :str(s+6), "M":i.mid})
+                           s += 7
+                           txt += u'@Alin \n'
+                       cl.sendMessage(to, text=txt, contentMetadata={u'MENTION': json.dumps({'MENTIONEES':b})}, contentType=0)
+                       cl.sendMessage(to, "Hello {} Mention".format(str(len(nama)))) 
+        
                elif 'Mode protection ' in msg.text:
                  if msg._from in owner or msg._from in admin or msg._from in staff:
                    spl = msg.text.replace('Mode protection ','')
@@ -2167,8 +2133,8 @@ def bot(op):
                    cl.leaveGroup(msg.to)
                elif text.lower() == 'bye':
                  if msg._from in owner or msg._from in admin or msg._from in staff:
-                   sw.leaveGroup(msg.to)
-               elif text.lower() == 'cabut.':
+                   cxb.leaveGroup(msg.to)
+               elif text.lower() == 'byeall.':
                  if msg._from in owner or msg._from in admin or msg._from in staff:
                    ki.leaveGroup(msg.to)
                    kk.leaveGroup(msg.to)
@@ -2247,7 +2213,7 @@ def bot(op):
                    G = kb.getGroup(msg.to)
                    G.preventedJoinByTicket = True
                    kb.updateGroup(G)
-               elif text.lower() == 'panggil':
+               elif text.lower() == 'joinall':
                  if msg._from in owner or msg._from in admin or msg._from in staff:
                    G = cl.getGroup(msg.to)
                    ginfo = cl.getGroup(msg.to)
@@ -2263,7 +2229,7 @@ def bot(op):
                    G = kb.getGroup(msg.to)
                    G.preventedJoinByTicket = True
                    kb.updateGroup(G)
-               elif text.lower() == 'mayhem':
+               elif text.lower() == 'kickjoin':
                  if msg._from in owner or msg._from in admin or msg._from in staff:
                   if msg.toType == 2:
                    ginfo = cl.getGroup(msg.to)
