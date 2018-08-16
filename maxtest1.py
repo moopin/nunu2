@@ -11,37 +11,37 @@ import time, random, sys, json, codecs, threading, glob, re, string, os, request
 from gtts import gTTS
 from googletrans import Translator
 
-cl = LineClient(authToken='EuSPuZTCziqAQRZsgN57.Egq9cEqQnOnQf8YrIwoOTW.CoGhN/amKI6iz7A3IPgKMrSwonEiJYASVQZ4L4ccoPw=')
+cl = LineClient(authToken='')
 cl.log("Auth Token : " + str(cl.authToken))
 channel = LineChannel(cl)
 cl.log("Channel Access Token : " + str(channel.channelAccessToken))
 
-ki = LineClient(authToken='EuqtapbTqMB5T4Znsmka.3svWLda5Jb1maVIdRVif6G.Q64z6bG9b0cOcDqAEH4UvUNwrEr0+Y+Ns/NVbeOKjWA=')
+ki = LineClient(authToken='')
 ki.log("Auth Token : " + str(ki.authToken))
 channel1 = LineChannel(ki)
 ki.log("Channel Access Token : " + str(channel1.channelAccessToken))
 
-kk = LineClient(authToken='EueNSE442zzx7dAmA0Ze.rGrfF6ZrHxn/mK8P0QsWJG.G0d1j3lGfl1TTg7xxemT13vmdHhh2EjLeROaytcxEFQ=')
+kk = LineClient(authToken='')
 kk.log("Auth Token : " + str(kk.authToken))
 channel2 = LineChannel(kk)
 kk.log("Channel Access Token : " + str(channel2.channelAccessToken))
 
-kc = LineClient(authToken='EuF1VOzOff87T112KBN7.lRS7JLquuHfF+Z6Gye9pfW.uixP26N0GUdBWT2yZOzW3LkTI5kAEezw7Kun6FB+qtw=')
+kc = LineClient(authToken='')
 kc.log("Auth Token : " + str(kc.authToken))
 channel3 = LineChannel(kc)
 kc.log("Channel Access Token : " + str(channel3.channelAccessToken))
 
-km = LineClient(authToken='EuVRxyoiiv8QbdZBlxcb.Z3SG540Ato3/aLq1x3nO/W./b+KvDThpYZ147HidJnlTlw4fqXP9oAS8HSFDeSonZU=')
+km = LineClient(authToken='')
 km.log("Auth Token : " + str(km.authToken))
 channel4 = LineChannel(km)
 km.log("Channel Access Token : " + str(channel4.channelAccessToken))
 
-kb = LineClient(authToken='EuE7yJI9F1iyuTlxFHj0.dWET14s/8H8x38VvgVn1Ca.x1fw4EwPxqw9gi2khbvCtoKhF40NoPU6F6hx7fuER74=')
+kb = LineClient(authToken='')
 kb.log("Auth Token : " + str(kb.authToken))
 channel5 = LineChannel(kb)
 kb.log("Channel Access Token : " + str(channel5.channelAccessToken))
 
-cxb = LineClient(authToken='EuXmPGrwTgbPMTs83wI2.m6b9aEkpFQmg3KxOeOhmGG.sao/5q214i5lwzaaSX5rItX1Zb8PbV5MX+eMd0OFtVA=')
+cxb = LineClient(authToken='')
 cxb.log("Auth Token : " + str(cxb.authToken))
 channel8 = LineChannel(cxb)
 cxb.log("Channel Access Token : " + str(channel8.channelAccessToken))
@@ -93,8 +93,8 @@ setowner ="""╭═══════╬╬════════╮
 ╞☪ Settings
 ╞☪ Speed
 ╞☪ Responsp
-╞☪ Panggil
-╞☪ Cabut.
+╞☪ Byeall
+╞☪ Joinall
 ╞☪ Leave all
 ╞☪ Me leave
 ╞☪ Responsename
