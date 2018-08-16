@@ -40,6 +40,8 @@ KLIK
 - `pip3 install pytz`
 - `pip3 install humanfriendly`
 - `pip3 install googletrans`
+- `pip3 install youtube_dl`
+- `pip3 install pafy`
 - `git clone https://github.com/0954517662/linebot`
 
 - 'Cara Run Bot'
