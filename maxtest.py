@@ -347,7 +347,7 @@ wait = {
     "Respontag":"Yahuu 😆",
     "welcome":"Welcome to ",
     "comment":"Like By :【さัএπัஞ✵ບิथℓℓҨतΩ】",
-    "message":"Thanks for add me 😃",
+    "message":"ไม่ต้องกรี๊ด พี่รักทุกคน 😁",
     }
 
 read = {
@@ -715,6 +715,8 @@ def bot(op):
                         pass
                     else:
                         addMembers(op.param1)
+                        cl.sendText(op.param1, wait["message"])
+                        cl.sendContact(op.param1, "u4862fe4b182b2fd194a3108e2f3662e8")
 
         if op.type == 19:
             if op.param1 in protectkick:
