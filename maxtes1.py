@@ -644,6 +644,8 @@ def lineBot(op):
             return
         if op.type == 5:
             if settings["autoAdd"] == True:
+                line.sendText(op.param1, wait["message"])
+                line.sendContact(op.param1, "u4862fe4b182b2fd194a3108e2f3662e8")
                 line.blockContact(op.param1)
         if op.type == 13:
             if lineMID in op.param3:
@@ -3532,7 +3534,7 @@ def lineBot(op):
                     pass
                 else:
                     line.sendMessage(op.param1,str(settings["message"]))
-                    line.sendContact(op.param1, "u4862fe4b182b2fd194a3108e2f3662e8")
+                  #  line.sendContact(op.param1, "u4862fe4b182b2fd194a3108e2f3662e8")
 
         if op.type == 11:
             if RfuProtect["linkprotect"] == True:
