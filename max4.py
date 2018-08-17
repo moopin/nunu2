@@ -167,7 +167,7 @@ def helpmessage():
                   "║͜͡☆➣ Tag" + "\n" + \
                   "║͜͡☆➣ Halo ( panggil bot ) " + "\n" + \
                   "║͜͡☆➣ Absen" + "\n" + \
-                  "║͜͡☆➣ Balik ( usir bot ) " + "\n" + \
+                  "║͜͡☆➣ bye ( bye bot ) " + "\n" + \
                   "║͜͡☆➣ Aku balik ( kluar semua ) " + "\n" + \
                   "║͜͡☆➣ Cekk ( cek semua bot )" + "\n" + \
                   "║͜͡☆➣ Me" + "\n" + \
@@ -358,15 +358,21 @@ def lineBot(op):
             if msg.contentType == 0:
                 if text is None:
                     return
+
+        if op.type == 0:
+            return
+        if op.type == 5:
+            if wait["autoAdd"] == True:
+                if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
+                    if (wait["message"] in [" "," ","\n",None]):
+                        pass
+                    else:
+                        gye.sendText(op.param1, wait["message"])
+                        gye.sendContact(op.param1, "u4862fe4b182b2fd194a3108e2f3662e8")
 #==============================================================================#
                 if text.lower() == 'help':
                     helpMessage = helpmessage()
                     gye.sendMessage(to, str(helpMessage))
-                    icon = "http://dl.profile.line-cdn.net/{}".format(contact.pictureStatus)
-                    name = contact.displayName
-                    link = "https://timeline.line.me/post/_ddXCRpdbVw6CeqSiX89jDBRdew_jvVlnSYJuL5Q/1153416460202028922"
-                    gye.sendFooter(to, helpMessage, icon, name, link)
-                    gye.sendContact(to, "u4862fe4b182b2fd194a3108e2f3662e8")
                 elif text.lower() == 'help 1':
                     helpTextToSpeech = helptexttospeech()
                     gye.sendMessage(to, str(helpTextToSpeech))
@@ -413,7 +419,7 @@ def lineBot(op):
 #==============================================================================#
                 elif text.lower() == 'status':
                     try:
-                        ret_ = "╭═════╬♥╬═════╮\n ║͜͡☆➣ ♥ Status Bots ♥\n ╰═════╬♥╬═════╯\n ╭═════╬♥╬═════╮\n"
+                        ret_ = "╭═════╬♥╬═════╮\n ║͜͡☆➣ 😈 Status Bots 😈\n╰═════╬♥╬═════╯\n ╭═════╬♥╬═════╮\n"
                         if settings["protect"] == True: ret_ += "║͜͡☆➣ Protect ✅"
                         else: ret_ += "║͜͡☆➣  Protect ❌"
                         if settings["qrprotect"] == True: ret_ += "\n║͜͡☆➣ Qr Protect ✅"
@@ -434,7 +440,7 @@ def lineBot(op):
                         else: ret_ += "\n║͜͡☆➣ Check Sticker ❌"
                         if settings["detectMention"] == True: ret_ += "\n║͜͡☆➣ Detect Mention ✅"
                         else: ret_ += "\n║͜͡☆➣ Detect Mention ❌"
-                        ret_ += "\n╰═════╬♥╬═════╯\n╭═════╬♥╬═════╮\n  ║͜͡☆➣ 【さัএπัஞ✵ບิथℓℓҨतΩ】\n╰═════╬♥╬═════╯"
+                        ret_ += "\n╰═════╬♥╬═════╯\n╭═════╬♥╬═════╮\n ║͜͡☆➣【さัএπัஞ✵ບิथℓℓҨतΩ】\n╰═════╬♥╬═════╯"
                         gye.sendMessage(to, str(ret_))
                     except Exception as e:
                         gye.sendMessage(msg.to, str(e))
@@ -724,13 +730,13 @@ def lineBot(op):
                         ki2.sendContact(to, ki2MID)
                         ki3.sendContact(to, ki3MID)
                         ki4.sendContact(to, ki4MID)
-                elif text.lower() in ["balik"]:    
+                elif text.lower() in ["bye"]:    
                     #gye.leaveGroup(msg.to)
                     ais.leaveGroup(msg.to)
                     ki2.leaveGroup(msg.to)
                     ki3.leaveGroup(msg.to)
                     ki4.leaveGroup(msg.to)
-                elif text.lower() in ["aku pamit yah"]:    
+                elif text.lower() in ["byeall"]:    
                     gye.leaveGroup(msg.to)
                     ais.leaveGroup(msg.to)
                     ki2.leaveGroup(msg.to)
@@ -756,7 +762,6 @@ def lineBot(op):
                 elif text.lower() == 'me':
                     sendMessageWithMention(to, gyeMID)
                     gye.sendContact(to, gyeMID)
-                    gye.sendMessage(msg.to,"➲ Jangan Songong Pake Sc Orang")
                 elif text.lower() == 'mymid':
                     gye.sendMessage(msg.to,"[MID]\n" +  gyeMID)
                 elif text.lower() == 'myname':
@@ -2071,7 +2076,7 @@ def lineBot(op):
         if op.type == 25:
             msg = op.message
             if text.lower() == '/ti/g/':    
-                if settings["join ticket"] == True:
+                if settings["join link"] == True:
                     link_re = re.compile('(?:line\:\/|line\.me\/R)\/ti\/g\/([a-zA-Z0-9_-]+)?')
                     links = link_re.findall(text)
                     n_links = []
