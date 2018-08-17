@@ -957,7 +957,7 @@ def lineBot(op):
                         mc = "【さัএπัஞ✵ບิथℓℓҨतΩ】"
                         for mi_d in settings["mimic"]["target"]:
                             mc += "\n "+line.getContact(mi_d).displayName
-                        line.sendMessage(msg.to,mc + "\n    `~|°• πနးຫຮี่のีধ ์×…")
+                        line.sendMessage(msg.to,mc + "\n【さัএπัஞ✵ບิथℓℓҨतΩ】")
                     
                 elif "mimic" in msg.text.lower():
                     sep = text.split(" ")
