@@ -299,16 +299,16 @@ def lineBot(op):
                 if text.lower() == 'help':
                     helpMessage = helpmessage()
                     gye.sendMessage(to, str(helpMessage))
-                    gye.sendContact(to, "u104e95aaefb53cf411f77353f6a96ece")
-                    gye.sendMessage(to,"Jangan Songong Ye Pake Sc Orang 􀰂􀰂􀰂􀰂􀠁✍͡Gye􏿿􀌂􀆭✯➣􏿿")
+                    gye.sendContact(to, "u4862fe4b182b2fd194a3108e2f3662e8")
+                    gye.sendMessage(to,"Jangan Songong Ye Pake Sc Orang 👿")
                 elif text.lower() == 'help1':
                     helpTextToSpeech = helptexttospeech()
                     gye.sendMessage(to, str(helpTextToSpeech))
-                    ais.sendMessage(to, "Jangan Songong Ye Pake Bot Orang 􀰂􀰂􀰂􀰂􀠁✍͡Gye􏿿􀌂􀆭✯➣􏿿")
+                    ais.sendMessage(to, "Jangan Songong Ye Pake Bot Orang 👿")
                 elif text.lower() == 'help2':
                     helpTranslate = helptranslate()
                     gye.sendMessage(to, str(helpTranslate))
-                    gye.sendMessage(to, "Jangan Songong Ye Pake Bot Orang 􀰂􀰂􀰂􀰂􀠁✍͡Gye􏿿􀌂􀆭✯➣􏿿")
+                    gye.sendMessage(to, "Jangan Songong Ye Pake Bot Orang 👿")
 #==============================================================================#
                 elif text.lower() == 'sp':
                     start = time.time()
@@ -334,7 +334,7 @@ def lineBot(op):
                         grouplist = gye.getGroupIdsJoined()
                         contactlist = gye.getAllContactIds()
                         blockedlist = gye.getBlockedContactIds()
-                        ret_ = "╭════════╬♥╬════════╮\nStatus Bots\n ╰════════╬♥╬════════╯\n ╭════════╬♥╬════════╮\n"
+                        ret_ = "╭══════╬♥╬══════╮\nStatus Bots\n ╰══════╬♥╬══════╯\n ╭══════╬♥╬══════╮\n"
                         ret_ += "\n╠ akun : {}".format(contact.displayName)
                         ret_ += "\n╠ group : {}".format(str(len(grouplist)))
                         ret_ += "\n╠ teman : {}".format(str(len(contactlist)))
@@ -342,14 +342,14 @@ def lineBot(op):
                         ret_ += "\n╠══[ About Selfbot ]"
                         ret_ += "\n╠ Version : Premium"
                         ret_ += "\n╠ Creator : {}".format(creator.displayName)
-                        ret_ += "\n╰════════╬♥╬════════╯\n\nǤﾘ乇 Џんﾑ 乃Ծｲ丂 ╭════════╬♥╬════════╮\n╰════════╬♥╬════════╯"
+                        ret_ += "\n╰══════╬♥╬══════╯\n\n╭══════╬♥╬══════╮\n【さัএπัஞ✵ບิथℓℓҨतΩ】\n╰══════╬♥╬══════╯"
                         gye.sendMessage(to, str(ret_))
                     except Exception as e:
                         gye.sendMessage(msg.to, str(e))
 #==============================================================================#
                 elif text.lower() == 'status':
                     try:
-                        ret_ = "╭════════╬🔛╬════════╮\n║͜͡☆➣ 🔛 丂ｲﾑｲЦ丂 乃Ծｲ丂 🔛\n ╰════════╬🔛╬════════╯\n ╭════════╬🔛╬════════╮\n"
+                        ret_ = "╭══════╬🔛╬═════╮\n║͜͡☆➣【さัএπัஞ✵ບิथℓℓҨतΩ】\n ╰═════╬🔛╬═════╯\n ╭═════╬🔛╬═════╮\n"
                         if settings["protect"] == True: ret_ += "║͜͡☆➣ Protect ✅"
                         else: ret_ += "║͜͡☆➣  Protect ❌"
                         if settings["qrprotect"] == True: ret_ += "\n║͜͡☆➣ Qr Protect ✅"
@@ -370,7 +370,7 @@ def lineBot(op):
                         else: ret_ += "\n║͜͡☆➣ Check Sticker ❌"
                         if settings["detectMention"] == True: ret_ += "\n║͜͡☆➣ Detect Mention ✅"
                         else: ret_ += "\n║͜͡☆➣ Detect Mention ❌"
-                        ret_ += "\n╰════════╬🔛╬════════╯\n╭════════╬🔛╬════════╮\n║͜͡☆➣ 🔛 Ǥﾘ乇 Џんﾑ 乃Ծｲ丂 🔛\n╰════════╬🔛╬════════╯"
+                        ret_ += "\n╰═════╬🔛╬═════╯\n╭═════╬🔛╬═════╮\n║͜͡☆➣【さัএπัஞ✵ບิथℓℓҨतΩ】\n╰═════╬🔛╬═════╯"
                         gye.sendMessage(to, str(ret_))
                     except Exception as e:
                         gye.sendMessage(msg.to, str(e))
