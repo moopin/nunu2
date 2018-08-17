@@ -18,21 +18,21 @@ line = LINE()
 line.log("Auth Token : " + str(line.authToken))
 line.log("Timeline Token : " + str(line.tl.channelAccessToken))
 
-# ki = LINE()
-# ki.log("Auth Token : " + str(ki.authToken))
-# ki.log("Timeline Token : " + str(ki.tl.channelAccessToken))
+ki = LINE()
+ki.log("Auth Token : " + str(ki.authToken))
+ki.log("Timeline Token : " + str(ki.tl.channelAccessToken))
 
-# kk = LINE()
-# kk.log("Auth Token : " + str(kk.authToken))
-# kk.log("Timeline Token : " + str(kk.tl.channelAccessToken))
+kk = LINE()
+kk.log("Auth Token : " + str(kk.authToken))
+kk.log("Timeline Token : " + str(kk.tl.channelAccessToken))
 
-# kc = LINE()
-# kc.log("Auth Token : " + str(kc.authToken))
-# kc.log("Timeline Token : " + str(kc.tl.channelAccessToken))
+kc = LINE()
+kc.log("Auth Token : " + str(kc.authToken))
+kc.log("Timeline Token : " + str(kc.tl.channelAccessToken))
 
-# ke = LINE()
-# ke.log("Auth Token : " + str(ke.authToken))
-# ke.log("Timeline Token : " + str(ke.tl.channelAccessToken))
+ke = LINE()
+ke.log("Auth Token : " + str(ke.authToken))
+ke.log("Timeline Token : " + str(ke.tl.channelAccessToken))
 
 
 print ("BY:【さัএπัஞ✵ບิथℓℓҨतΩ】")
@@ -41,40 +41,40 @@ lineMID = line.profile.mid
 lineProfile = line.getProfile()
 lineSettings = line.getSettings()
 
-# kiMID = ki.profile.mid
-# kiProfile = ki.getProfile()
-# kiSettings = ki.getSettings()
+kiMID = ki.profile.mid
+kiProfile = ki.getProfile()
+kiSettings = ki.getSettings()
 
-# kkMID = kk.profile.mid
-# kkProfile = kk.getProfile()
-# kkSettings = kk.getSettings()
+kkMID = kk.profile.mid
+kkProfile = kk.getProfile()
+kkSettings = kk.getSettings()
 
-# kcMID = kc.profile.mid
-# kcProfile = kc.getProfile()
-# kcSettings = kc.getSettings()
+kcMID = kc.profile.mid
+kcProfile = kc.getProfile()
+kcSettings = kc.getSettings()
 
-# keMID = kc.profile.mid
-# keProfile = kc.getProfile()
-# keSettings = kc.getSettings()
+keMID = kc.profile.mid
+keProfile = kc.getProfile()
+keSettings = kc.getSettings()
 
 
-# oepoll = OEPoll(ke)
-# oepoll = OEPoll(kc)
-# oepoll = OEPoll(kk)
-# oepoll = OEPoll(ki)
+oepoll = OEPoll(ke)
+oepoll = OEPoll(kc)
+oepoll = OEPoll(kk)
+oepoll = OEPoll(ki)
 oepoll = OEPoll(line)
 readOpen = codecs.open("read.json","r","utf-8")
 settingsOpen = codecs.open("temp.json","r","utf-8")
 read = json.load(readOpen)
 settings = json.load(settingsOpen)
-Rfu = [line]
+Rfu = [line,ki,kk,kc,ke]
 lineMID = line.getProfile().mid
-# kiMID = ki.getProfile().mid
-# kkMID = kk.getProfile().mid
-# kcMID = kc.getProfile().mid
-# kcMID = ke.getProfile().mid
-# bot1 = line.getProfile().mid
-RfuBot=[lineMID]
+kiMID = ki.getProfile().mid
+kkMID = kk.getProfile().mid
+kcMID = kc.getProfile().mid
+kcMID = ke.getProfile().mid
+bot1 = line.getProfile().mid
+RfuBot=[lineMID,kiMID,kkMID,kcMID,keMID]
 Family=["u4862fe4b182b2fd194a3108e2f3662e8",lineMID]
 admin=['u4862fe4b182b2fd194a3108e2f3662e8',lineMID]
 RfuFamily = RfuBot + Family
@@ -120,7 +120,7 @@ settings = {
     "pro_name": {},
     "message":"สวัสดีครับ 🤒\nรับยาช่องถัดไป 🤒",
     "comment":"By.【さัএπัஞ✵ບิथℓℓҨतΩ】",
-    "Respontag":"แทคทำไม คิดถึงเค้าอ่ะดิ้ 😝",
+    "Respontag":"แทคทำไม คนจะนอน 😔",
     "userAgent": [
         "Mozilla/5.0 (X11; U; Linux i586; de; rv:5.0) Gecko/20100101 Firefox/5.0",
         "Mozilla/5.0 (X11; U; Linux amd64; rv:5.0) Gecko/20100101 Firefox/5.0 (Debian)",
@@ -720,7 +720,7 @@ def lineBot(op):
                 elif text.lower() == 'ไลน์':
                     try:
                         arr = []
-                        owner = "u3930826c2f2dbf7b11a27efbcc37add"
+                        owner = "u4862fe4b182b2fd194a3108e2f3662e8"
                         creator = line.getContact(owner)
                         contact = line.getContact(lineMID)
                         grouplist = line.getGroupIdsJoined()
@@ -3593,7 +3593,7 @@ def lineBot(op):
                          if settings['detectMention'] == True:
                              contact = line.getContact(msg._from)
                              cName = contact.displayName
-                             balas = ["\n " + cName ]
+                             balas = ["เหมือนเธอเหงา ?\n" + cName ]
                              ret_ = "" + random.choice(balas)
                              name = re.findall(r'@(\w+)', msg.text)
                              mention = ast.literal_eval(msg.contentMetadata["MENTION"])
@@ -3639,7 +3639,7 @@ def lineBot(op):
                             pass
                         else:
                             RfuCctv['sidermem'][op.param1] += "\n" + Name
-                            pref=['แอบอ่านทำไม ทำไมมะออกมาคุยกันละ  ']
+                            pref=['แอบอ่านทำไม ทำไมไม่ออกมาคุยกันละ  ']
                             line.sendMessage(op.param1, str(random.choice(pref))+' '+Name)
                     else:
                         pass
