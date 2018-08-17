@@ -397,7 +397,7 @@ def myhelp():
                   "┃🔴┃ " + key + "Zt\n" + \
                   "┃🔴┃ " + key + "Allban\n" + \
                   "┃🔴┃ " + key + "Cb\n" + \
-                  "┃🔴┃ " + key + "Rakey\n" + \
+                  "┃🔴┃ " + key + "Mybot\n" + \
                   "╰━━━━━━━━━━╯\n──┅━✥ == ✥━┅──\n┃😈┃MAX┃😈┃\n──┅━✥ == ✥━┅──\n╭━━━━━━━━━━╮\n" + \
                   "┃🔴┃ " + key + "ปิด/เปิดกันสมาชิก\n" + \
                   "┃🔴┃ " + key + "ปิด/เปิดหมด\n" + \
@@ -2593,7 +2593,25 @@ def lineBot(op):
                         line.sendMessage(msg.to,"Update Bio All Kicker to : " + string)
                         print ("Update Bio All Kicker")
 
-                elif text.lower() == "Rakey":
+                elif text.lower() == "mybot":
+                    if msg._from in Family:
+                        msg.contentType = 13
+                        msg.contentMetadata = {'mid': lineMID}
+                        cl.sendMessage1(msg)
+                        msg.contentType = 13
+                        msg.contentMetadata = {'mid': kiMID}
+                        cl.sendMessage1(msg)
+                        msg.contentType = 13
+                        msg.contentMetadata = {'mid': kkMID}
+                        cl.sendMessage1(msg)
+                        msg.contentType = 13
+                        msg.contentMetadata = {'mid': kcMID}
+                        cl.sendMessage1(msg)
+                        msg.contentType = 13
+                        msg.contentMetadata = {'mid': keMID}
+                        cl.sendMessage1(msg)
+			
+                elif text.lower() == "bots":
                     if msg._from in Family:
                         profile = ki.getProfile()
                         text = profile.displayName + ""
