@@ -1,15 +1,16 @@
 # -*- coding: utf-8 -*-
 
 from linepy import *
-from akad.ttypes import Message
+from akad.ttypes import *
+from multiprocessing import Pool, Process
 from akad.ttypes import ContentType as Type
-from gtts import gTTS
-from time import sleep
-from datetime import datetime, timedelta
+from datetime import datetime
+import time,random,sys,json,codecs,threading,glob,re,os,subprocess
 from bs4 import BeautifulSoup
-from googletrans import Translator
 from humanfriendly import format_timespan, format_size, format_number, format_length
-import time, random, sys, json, codecs, threading, glob, re, string, os, requests, six, ast, pytz, urllib, urllib3, urllib.parse, traceback, atexit, subprocess
+import time, random, sys, json, codecs, threading, glob, re, string, os, requests, subprocess, six, ast, pytz, urllib, urllib.parse,youtube_dl,pafy,timeit,atexit,traceback
+from gtts import gTTS
+from googletrans import Translator
 
 cl = LINE()
 #cl = LINE("Ev49wbWDciJuzQi8UG6e.mDIRQD+WthuKlYOGL7ITRG.pAFPZhYHHPSFjqOGUkKn9dqHCER/ZNDUDgOBpLrWJe4=")   #PH-13
