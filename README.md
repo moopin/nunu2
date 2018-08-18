@@ -42,7 +42,7 @@ KLIK
 - `pip3 install googletrans`
 - `pip3 install youtube_dl`
 - `pip3 install pafy`
-- `git clone https://github.com/0954517662/linebot`
+- `git clone https://github.com/0954517662/MAXZA`
 
 - 'Cara Run Bot'
 - Ketik -> `cd Gye`
