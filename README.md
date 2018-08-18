@@ -1,4 +1,4 @@
-# NON LIMIT CHAT. AND SPEED FASH
+# SELFBOT LINE PYTHON3
 
 MAAF SOBAT FILE PYTHON DAN LAIN LAINYA TIDAK DI CANTUMKAN.
 KARNA FILE SYSTEM BERBAYAR SILAHKAN GANTI IMPORT NYA AJA PADA
@@ -24,7 +24,7 @@ from googletrans import Translator
 juni 2018
 ## [SUBCRABE NOW](https://www.youtube.com/channel/UCycBrqSWEHdk-slnhUmGWiQ)
 KLIK
-## [CREATOR](http://line.me/ti/p/~adiputra.95)
+## [CREATOR](http://line.me/ti/p/~max_pv)
 
 #SELFBOT PYHON3
 ------
